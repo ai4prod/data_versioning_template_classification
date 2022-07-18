@@ -22,7 +22,7 @@ This code will setup a remote folder for dataset version. It is working as a git
 
 2) dvc remote add -d dvc-remote {PATH TO LOCAL REMOTE. Usually path is  /path/to/Local/NameDatasetRemote}
 
-3) dvc add Data/Dataset  {Add Dataset folder inside Data/Dataset. Inside Dataset folder you need to add your data. This will be tracked by version} {ONLY FIRST TIME}
+3) dvc add Data/Dataset  {Add Dataset folder inside Data/Dataset. Inside Dataset folder you need to add your data. This will be tracked by version} 
 
 4) git add Data/Dataset.dvc ./gitignore
 
@@ -32,6 +32,11 @@ This code will setup a remote folder for dataset version. It is working as a git
 
 7) dvc push {Push dataset to remote localtion /path/to/Local/NameDatasetRemote }
 
+# How to Add new Data and Version
+
+1) Add new Data to Data/Dataset folder  
+
+2) Repeat step 3-7 WARNING Change git tag v1 with incremental number
 
 # How to retrive a dataset
 
