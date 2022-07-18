@@ -12,7 +12,7 @@ See data_versioning_template repository
 We adapt dataset folder path in order to be integrated in ai4prod_python
 
 
-#How to Connect to a remote Local Dataset 
+# How to Connect to a remote Dataset on Local Machine
 
 This code will setup a remote folder for dataset version. It is working as a git remote repository but for large dataset file
 
@@ -22,7 +22,9 @@ This code will setup a remote folder for dataset version. It is working as a git
 
 2) dvc remote add -d dvc-remote {PATH TO LOCAL REMOTE. Usually path is  /path/to/Local/NameDatasetRemote}
 
-3) dvc add Data/Dataset  {Add Dataset folder inside Data/Dataset. Inside Dataset folder you need to add your data. This will be tracked by version} 
+3) git rm -r --cached 'Data/Dataset'
+   git commit -m "stop tracking Data/Dataset init dataset_name"
+   dvc add Data/Dataset  {Add Dataset folder inside Data/Dataset. Inside Dataset folder you need to add your data. This will be tracked by version} 
 
 4) git add Data/Dataset.dvc ./gitignore
 
@@ -31,6 +33,8 @@ This code will setup a remote folder for dataset version. It is working as a git
 6) git tag -a 'v1' -m 'raw data' {Used to retrive Dataset with version without Tag}
 
 7) dvc push {Push dataset to remote localtion /path/to/Local/NameDatasetRemote }
+
+
 
 # How to Add new Data and Version
 
